@@ -1,0 +1,20 @@
+[connection]
+id=<%= @name %>
+uuid=<%= @uuid %>
+type=wifi
+
+[wifi]
+ssid=<%= @name %>
+mode=infrastructure
+mac-address=<%= @mac %>
+
+[wifi-security]
+key-mgmt=wpa-psk
+auth-alg=open
+psk=<%= @psk %>
+
+[ipv4]
+method=auto
+
+[ipv6]
+method=auto
