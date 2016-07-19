@@ -1,10 +1,15 @@
 define wifi::infrastructure(
-  $mac,
-  $psk,
-  $uuid,
+  $psk = undefined,
+  $uuid = undefined,
+  $mac = undefined,
   $ensure = 'present',
   $ssid = $name,
 ) {
+  if $uuid {
+    $real_uuid = $uuid
+  } else {
+    $real_uuid = sha1($title)
+  }
   if $::osfamily == 'FreeBSD' {
     concat::fragment { "/etc/wpa_supplicant.conf-${name}":
       ensure  => $ensure,
