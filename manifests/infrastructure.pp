@@ -1,7 +1,7 @@
 define wifi::infrastructure(
-  $psk = undefined,
-  $uuid = undefined,
-  $mac = undefined,
+  $psk = undef,
+  $uuid = undef,
+  $mac = undef,
   $ensure = 'present',
   $ssid = $name,
 ) {
