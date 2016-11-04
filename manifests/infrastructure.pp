@@ -14,7 +14,7 @@ define wifi::infrastructure(
     concat::fragment { "/etc/wpa_supplicant.conf-${name}":
       ensure  => $ensure,
       target  => '/etc/wpa_supplicant.conf',
-      content => "network={\n  ssid=\"${ssid}\"\n  psk=\"${psk}\"\n}\n",
+      content => template('wifi/wpa_supplicant.conf'),
       order   => '10',
     }
   }
