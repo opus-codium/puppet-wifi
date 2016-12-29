@@ -19,6 +19,10 @@ psk=<%= @psk %>
 
 [ipv4]
 method=auto
+<% if @dns.size > 0 -%>
+dns=<%= @dns.map { |server| "#{server};" }.join %>
+ignore-auto-dns=true
+<% end -%>
 
 [ipv6]
 method=auto

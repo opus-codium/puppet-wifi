@@ -2,6 +2,7 @@ define wifi::infrastructure(
   $psk = undef,
   $uuid = undef,
   $mac = undef,
+  $dns = [],
   $ensure = 'present',
   $ssid = $name,
 ) {
