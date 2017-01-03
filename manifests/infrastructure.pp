@@ -6,6 +6,8 @@ define wifi::infrastructure(
   $ensure = 'present',
   $ssid = $name,
 ) {
+  include ::wifi
+
   if $uuid {
     $real_uuid = $uuid
   } else {
