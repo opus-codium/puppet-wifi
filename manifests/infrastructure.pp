@@ -1,10 +1,10 @@
 define wifi::infrastructure(
-  $psk = undef,
-  $uuid = undef,
-  $mac = undef,
-  $dns = [],
-  $ensure = 'present',
-  $ssid = $name,
+  Optional[String] $psk = undef,
+  Optional[String] $uuid = undef,
+  Optional[String] $mac = undef,
+  Array[String] $dns = [],
+  String $ensure = 'present',
+  Optional[String] $ssid = $name,
 ) {
   include ::wifi
 
