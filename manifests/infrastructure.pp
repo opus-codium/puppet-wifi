@@ -13,9 +13,8 @@ define wifi::infrastructure(
   } else {
     $real_uuid = sha1($title)
   }
-  if $::osfamily == 'FreeBSD' {
+  if $::osfamily == 'FreeBSD' and $ensure == 'present' {
     concat::fragment { "/etc/wpa_supplicant.conf-${name}":
-      ensure  => $ensure,
       target  => '/etc/wpa_supplicant.conf',
       content => template('wifi/wpa_supplicant.conf'),
       order   => '10',
