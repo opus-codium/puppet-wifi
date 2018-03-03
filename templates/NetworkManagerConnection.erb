@@ -10,11 +10,11 @@ mode=infrastructure
 mac-address=<%= @mac %>
 <% end -%>
 
-<% if @psk -%>
+<% if @real_psk -%>
 [wifi-security]
 key-mgmt=wpa-psk
 auth-alg=open
-psk=<%= @psk %>
+psk=<%= @real_psk %>
 <% end -%>
 
 [ipv4]

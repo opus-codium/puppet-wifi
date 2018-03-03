@@ -8,6 +8,9 @@ define wifi::infrastructure(
 ) {
   include ::wifi
 
+  if $psk {
+    $real_psk = wifi::wpa_passphrase($ssid, $psk)
+  }
   if $uuid {
     $real_uuid = $uuid
   } else {
