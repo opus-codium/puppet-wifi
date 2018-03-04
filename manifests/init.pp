@@ -12,12 +12,5 @@ class wifi {
       content => "ctrl_interface=/var/run/wpa_supplicant\n",
       order   => '01',
     }
-
-    service { 'wpa_supplicant':
-      ensure => running,
-      enable => true,
-    }
-
-    Concat['/etc/wpa_supplicant.conf'] ~> Service['wpa_supplicant']
   }
 }
