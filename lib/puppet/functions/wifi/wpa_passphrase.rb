@@ -1,9 +1,9 @@
 require 'openssl'
 
-# @summary Hash a passphrase
+# @summary Generate the 256-bit pre-shared WPA key for a Wi-Fi network
 Puppet::Functions.create_function(:'wifi::wpa_passphrase') do
-  # @param ssid
-  # @param passphrase
+  # @param ssid SSID of the network
+  # @param passphrase Passphrase used for authentication on the network
   # @return [String] The hashed passphrase
   dispatch :wpa_passphrase do
     param 'String', :ssid
