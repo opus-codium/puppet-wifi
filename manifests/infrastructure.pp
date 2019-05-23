@@ -9,7 +9,7 @@ define wifi::infrastructure (
   Enum['present', 'absent'] $ensure = 'present',
   Array[String]             $dns    = [],
   Optional[String]          $mac    = undef,
-  Optional[String]          $psk    = undef,
+  Optional[String[8,63]]    $psk    = undef,
   Optional[String]          $ssid   = $name,
   Optional[String]          $uuid   = undef,
 ) {
