@@ -1,0 +1,8 @@
+network={
+  ssid="<%= $ssid %>"
+<% if $real_psk { -%>
+  psk=<%= $real_psk %>
+<% } else { -%>
+  key_mgmt=NONE
+<% } -%>
+}
