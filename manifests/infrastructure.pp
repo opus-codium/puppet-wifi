@@ -1,11 +1,10 @@
-# @summary Manage a Wi-Fi endpoint
+# @summary This define configure a Wi-Fi connection to a network
 #
-# @param psk Pre Shared Key
-# @param uuid
-# @param mac
-# @param dns
-# @param ensure
-# @param ssid SSID of the network
+# @param dns DNS servers to use with this connection
+# @param mac MAC address of the Access Point
+# @param psk Pre-Shared Key to use for authentication
+# @param ssid Service Set IDentifier (SSID) of the network
+# @param uuid UUID of the network
 define wifi::infrastructure (
   Enum['present', 'absent'] $ensure = 'present',
   Array[String]             $dns    = [],
