@@ -1,6 +1,10 @@
 require 'openssl'
 
+# @summary Hash a passphrase
 Puppet::Functions.create_function(:'wifi::wpa_passphrase') do
+  # @param ssid
+  # @param passphrase
+  # @return [String] The hashed passphrase
   dispatch :wpa_passphrase do
     param 'String', :ssid
     param 'String', :passphrase

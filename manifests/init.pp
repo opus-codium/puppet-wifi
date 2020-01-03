@@ -1,3 +1,4 @@
+# @summary Manage Wi-Fi configuration
 class wifi {
   if $::osfamily == 'FreeBSD' {
     concat { '/etc/wpa_supplicant.conf':

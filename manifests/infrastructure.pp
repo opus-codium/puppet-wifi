@@ -1,3 +1,11 @@
+# @summary Manage a Wi-Fi endpoint
+#
+# @param psk Pre Shared Key
+# @param uuid
+# @param mac
+# @param dns
+# @param ensure
+# @param ssid SSID of the network
 define wifi::infrastructure(
   Optional[String] $psk = undef,
   Optional[String] $uuid = undef,
