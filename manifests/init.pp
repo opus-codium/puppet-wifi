@@ -1,6 +1,6 @@
 # @summary Manage Wi-Fi configuration
 class wifi {
-  if $::osfamily == 'FreeBSD' {
+  if $facts.get('os.family') == 'FreeBSD' {
     concat { '/etc/wpa_supplicant.conf':
       ensure => present,
       owner  => 'root',
