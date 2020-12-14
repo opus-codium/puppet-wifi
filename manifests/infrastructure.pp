@@ -6,7 +6,7 @@
 # @param dns
 # @param ensure
 # @param ssid SSID of the network
-define wifi::infrastructure(
+define wifi::infrastructure (
   Optional[String] $psk = undef,
   Optional[String] $uuid = undef,
   Optional[String] $mac = undef,
@@ -14,7 +14,7 @@ define wifi::infrastructure(
   String $ensure = 'present',
   Optional[String] $ssid = $name,
 ) {
-  include ::wifi
+  include wifi
 
   if $psk {
     $real_psk = wifi::wpa_passphrase($ssid, $psk)
@@ -24,14 +24,14 @@ define wifi::infrastructure(
   } else {
     $real_uuid = sha1($title)
   }
-  if $::osfamily == 'FreeBSD' and $ensure == 'present' {
+  if $facts.get('os.family') == 'FreeBSD' and $ensure == 'present' {
     concat::fragment { "/etc/wpa_supplicant.conf-${name}":
       target  => '/etc/wpa_supplicant.conf',
       content => template('wifi/wpa_supplicant.conf'),
       order   => '10',
     }
   }
-  if ($::osfamily == 'Debian' and $::networkmanagerversion) {
+  if ($facts.get('os.family') == 'Debian' and $::networkmanagerversion) {
     file { "/etc/NetworkManager/system-connections/${ssid}":
       ensure  => $ensure,
       owner   => 0,
