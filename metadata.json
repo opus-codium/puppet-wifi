@@ -1,6 +1,6 @@
 {
   "name": "opuscodium-wifi",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "source": "https://github.com/opus-codium/puppet-wifi",
   "author": "Opus Codium",
   "license": "Apache-2.0",
@@ -40,4 +40,3 @@
     }
   ]
 }
-
