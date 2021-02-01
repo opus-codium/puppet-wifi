@@ -7,7 +7,6 @@
   "summary": "Configures WiFi accesspoints",
   "project_page": "https://github.com/opus-codium/puppet-wifi",
   "issues_url": "https://github.com/opus-codium/puppet-wifi/issues",
-  "data_provider": "hiera",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
