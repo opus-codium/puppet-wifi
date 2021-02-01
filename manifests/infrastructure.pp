@@ -15,9 +15,7 @@ define wifi::infrastructure (
 ) {
   include wifi
 
-  if $psk {
-    $real_psk = wifi::wpa_passphrase($ssid, $psk)
-  }
+  $real_psk = wifi::wpa_passphrase($ssid, $psk)
 
   case $facts.get('os.family') {
     'debian': {

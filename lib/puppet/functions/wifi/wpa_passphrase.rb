@@ -11,7 +11,17 @@ Puppet::Functions.create_function(:'wifi::wpa_passphrase') do
     return_type 'String'
   end
 
+  dispatch :undef_wpa_passphrase do
+    param 'String', :ssid
+    param 'Undef', :passphrase
+    return_type 'Undef'
+  end
+
   def wpa_passphrase(ssid, passphrase)
     OpenSSL::PKCS5.pbkdf2_hmac_sha1(passphrase, ssid, 4096, 32).unpack1('H*')
+  end
+
+  def undef_wpa_passphrase(_ssid, _passphrase)
+    :undef
   end
 end
