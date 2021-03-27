@@ -5,13 +5,15 @@
 # @param psk Pre-Shared Key to use for authentication
 # @param ssid Service Set IDentifier (SSID) of the network
 # @param uuid UUID of the network
+# @param priority Priority of this AP
 define wifi::infrastructure (
-  Enum['present', 'absent'] $ensure = 'present',
-  Array[String]             $dns    = [],
-  Optional[String]          $mac    = undef,
-  Optional[String[8,63]]    $psk    = undef,
-  Optional[String]          $ssid   = $name,
-  Optional[String]          $uuid   = undef,
+  Enum['present', 'absent'] $ensure   = 'present',
+  Array[String]             $dns      = [],
+  Optional[String]          $mac      = undef,
+  Optional[String[8,63]]    $psk      = undef,
+  Optional[String]          $ssid     = $name,
+  Optional[String]          $uuid     = undef,
+  Optional[Integer]         $priority = undef,
 ) {
   include wifi
 
@@ -50,6 +52,7 @@ define wifi::infrastructure (
             {
               ssid     => $ssid,
               real_psk => $real_psk,
+              priority => $priority,
             }
           ),
         }
