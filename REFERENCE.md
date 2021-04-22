@@ -18,21 +18,29 @@
 
 ## Classes
 
-### `wifi`
+### <a name="wifi"></a>`wifi`
 
 Manage Wi-Fi configuration
 
 ## Defined types
 
-### `wifi::infrastructure`
+### <a name="wifiinfrastructure"></a>`wifi::infrastructure`
 
 This define configure a Wi-Fi connection to a network
 
 #### Parameters
 
-The following parameters are available in the `wifi::infrastructure` defined type.
+The following parameters are available in the `wifi::infrastructure` defined type:
 
-##### `dns`
+* [`dns`](#dns)
+* [`mac`](#mac)
+* [`psk`](#psk)
+* [`ssid`](#ssid)
+* [`uuid`](#uuid)
+* [`priority`](#priority)
+* [`ensure`](#ensure)
+
+##### <a name="dns"></a>`dns`
 
 Data type: `Array[String]`
 
@@ -40,7 +48,7 @@ DNS servers to use with this connection
 
 Default value: `[]`
 
-##### `mac`
+##### <a name="mac"></a>`mac`
 
 Data type: `Optional[String]`
 
@@ -48,15 +56,15 @@ MAC address of the Access Point
 
 Default value: ``undef``
 
-##### `psk`
+##### <a name="psk"></a>`psk`
 
-Data type: `Optional[String[8,63]]`
+Data type: `Optional[String[8,64]]`
 
 Pre-Shared Key to use for authentication
 
 Default value: ``undef``
 
-##### `ssid`
+##### <a name="ssid"></a>`ssid`
 
 Data type: `Optional[String]`
 
@@ -64,7 +72,7 @@ Service Set IDentifier (SSID) of the network
 
 Default value: `$name`
 
-##### `uuid`
+##### <a name="uuid"></a>`uuid`
 
 Data type: `Optional[String]`
 
@@ -72,7 +80,15 @@ UUID of the network
 
 Default value: ``undef``
 
-##### `ensure`
+##### <a name="priority"></a>`priority`
+
+Data type: `Optional[Integer]`
+
+Priority of this AP
+
+Default value: ``undef``
+
+##### <a name="ensure"></a>`ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -82,13 +98,13 @@ Default value: `'present'`
 
 ## Functions
 
-### `wifi::wpa_passphrase`
+### <a name="wifiwpa_passphrase"></a>`wifi::wpa_passphrase`
 
 Type: Ruby 4.x API
 
 Generate the 256-bit pre-shared WPA key for a Wi-Fi network
 
-#### `wifi::wpa_passphrase(String $ssid, String $passphrase)`
+#### `wifi::wpa_passphrase(String $ssid, String[8,63] $passphrase)`
 
 The wifi::wpa_passphrase function.
 
@@ -102,7 +118,25 @@ SSID of the network
 
 ##### `passphrase`
 
-Data type: `String`
+Data type: `String[8,63]`
 
 Passphrase used for authentication on the network
+
+#### `wifi::wpa_passphrase(String $ssid, Undef $passphrase)`
+
+The wifi::wpa_passphrase function.
+
+Returns: `Undef`
+
+##### `ssid`
+
+Data type: `String`
+
+
+
+##### `passphrase`
+
+Data type: `Undef`
+
+
 
