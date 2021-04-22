@@ -7,7 +7,7 @@ Puppet::Functions.create_function(:'wifi::wpa_passphrase') do
   # @return [String] The hashed passphrase
   dispatch :wpa_passphrase do
     param 'String', :ssid
-    param 'String', :passphrase
+    param 'String[8,63]', :passphrase
     return_type 'String'
   end
 

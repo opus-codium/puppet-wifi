@@ -10,14 +10,18 @@ define wifi::infrastructure (
   Enum['present', 'absent'] $ensure   = 'present',
   Array[String]             $dns      = [],
   Optional[String]          $mac      = undef,
-  Optional[String[8,63]]    $psk      = undef,
+  Optional[String[8,64]]    $psk      = undef,
   Optional[String]          $ssid     = $name,
   Optional[String]          $uuid     = undef,
   Optional[Integer]         $priority = undef,
 ) {
   include wifi
 
-  $real_psk = wifi::wpa_passphrase($ssid, $psk)
+  if 64 == $psk.length() {
+    $real_psk = $psk
+  } else {
+    $real_psk = wifi::wpa_passphrase($ssid, $psk)
+  }
 
   case $facts.get('os.family') {
     'debian': {
