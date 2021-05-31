@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.1.0](https://github.com/opus-codium/puppet-wifi/tree/1.1.0) (2021-04-21)
+## [1.2.0](https://github.com/opus-codium/puppet-wifi/tree/1.2.0) (2021-05-31)
+
+[Full Changelog](https://github.com/opus-codium/puppet-wifi/compare/1.1.0...1.2.0)
+
+**Implemented enhancements:**
+
+- Allow setting explicit BSSID [\#29](https://github.com/opus-codium/puppet-wifi/pull/29) ([smortex](https://github.com/smortex))
+
+## [1.1.0](https://github.com/opus-codium/puppet-wifi/tree/1.1.0) (2021-04-22)
 
 [Full Changelog](https://github.com/opus-codium/puppet-wifi/compare/1.0.0...1.1.0)
 
@@ -21,10 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove explicit data\_provider from metadata.json [\#23](https://github.com/opus-codium/puppet-wifi/pull/23) ([smortex](https://github.com/smortex))
 - Fix minimum Puppet version requirement [\#19](https://github.com/opus-codium/puppet-wifi/pull/19) ([smortex](https://github.com/smortex))
-
-**Merged pull requests:**
-
-- Add acceptance tests [\#18](https://github.com/opus-codium/puppet-wifi/pull/18) ([smortex](https://github.com/smortex))
 
 ## [1.0.0](https://github.com/opus-codium/puppet-wifi/tree/1.0.0) (2020-12-21)
 

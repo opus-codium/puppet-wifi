@@ -38,6 +38,7 @@ The following parameters are available in the `wifi::infrastructure` defined typ
 * [`ssid`](#ssid)
 * [`uuid`](#uuid)
 * [`priority`](#priority)
+* [`bssid`](#bssid)
 * [`ensure`](#ensure)
 
 ##### <a name="dns"></a>`dns`
@@ -85,6 +86,14 @@ Default value: ``undef``
 Data type: `Optional[Integer]`
 
 Priority of this AP
+
+Default value: ``undef``
+
+##### <a name="bssid"></a>`bssid`
+
+Data type: `Optional[String[1]]`
+
+Network BSSID (typically the MAC address of the access point)
 
 Default value: ``undef``
 
