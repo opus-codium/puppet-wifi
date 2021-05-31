@@ -6,6 +6,7 @@
 # @param ssid Service Set IDentifier (SSID) of the network
 # @param uuid UUID of the network
 # @param priority Priority of this AP
+# @param bssid Network BSSID (typically the MAC address of the access point)
 define wifi::infrastructure (
   Enum['present', 'absent'] $ensure   = 'present',
   Array[String]             $dns      = [],
@@ -14,6 +15,7 @@ define wifi::infrastructure (
   Optional[String]          $ssid     = $name,
   Optional[String]          $uuid     = undef,
   Optional[Integer]         $priority = undef,
+  Optional[String[1]]       $bssid    = undef,
 ) {
   include wifi
 
@@ -43,6 +45,7 @@ define wifi::infrastructure (
             real_psk  => $real_psk,
             real_uuid => $real_uuid,
             ssid      => $ssid,
+            bssid     => $bssid,
           }
         ),
       }
@@ -57,6 +60,7 @@ define wifi::infrastructure (
               ssid     => $ssid,
               real_psk => $real_psk,
               priority => $priority,
+              bssid    => $bssid,
             }
           ),
         }
