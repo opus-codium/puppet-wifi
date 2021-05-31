@@ -5,6 +5,9 @@ type=wifi
 
 [wifi]
 ssid=<%= $name %>
+<% if $bssid { -%>
+bssid=<%= $bssid %>
+<% } -%>
 mode=infrastructure
 <% if $mac { -%>
 mac-address=<%= $mac %>

@@ -1,5 +1,8 @@
 network={
   ssid="<%= $ssid %>"
+<% if $bssid { -%>
+  bssid=<%= $bssid %>
+<% } -%>
 <% if $priority { -%>
   priority=<%= $priority %>
 <% } -%>
