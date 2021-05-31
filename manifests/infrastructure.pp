@@ -20,9 +20,9 @@ define wifi::infrastructure (
   include wifi
 
   if 64 == $psk.length() {
-    $real_psk = $psk
+    $hashed_psk = $psk
   } else {
-    $real_psk = wifi::wpa_passphrase($ssid, $psk)
+    $hashed_psk = wifi::wpa_passphrase($ssid, $psk)
   }
 
   case $facts.get('os.family') {
@@ -40,12 +40,12 @@ define wifi::infrastructure (
         mode    => '0600',
         content => epp('wifi/NetworkManagerConnection.epp',
           {
-            dns       => $dns,
-            mac       => $mac,
-            real_psk  => $real_psk,
-            real_uuid => $real_uuid,
-            ssid      => $ssid,
-            bssid     => $bssid,
+            dns        => $dns,
+            mac        => $mac,
+            hashed_psk => $hashed_psk,
+            real_uuid  => $real_uuid,
+            ssid       => $ssid,
+            bssid      => $bssid,
           }
         ),
       }
@@ -57,10 +57,10 @@ define wifi::infrastructure (
           order   => '10',
           content => epp('wifi/wpa_supplicant.conf.epp',
             {
-              ssid     => $ssid,
-              real_psk => $real_psk,
-              priority => $priority,
-              bssid    => $bssid,
+              ssid       => $ssid,
+              hashed_psk => $hashed_psk,
+              priority   => $priority,
+              bssid      => $bssid,
             }
           ),
         }

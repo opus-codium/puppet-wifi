@@ -6,8 +6,8 @@ network={
 <% if $priority { -%>
   priority=<%= $priority %>
 <% } -%>
-<% if $real_psk { -%>
-  psk=<%= $real_psk %>
+<% if $hashed_psk { -%>
+  psk=<%= $hashed_psk %>
 <% } else { -%>
   key_mgmt=NONE
 <% } -%>
