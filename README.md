@@ -1,5 +1,14 @@
 # wifi
 
+<!-- header GFM -->
+[![Build Status](https://img.shields.io/github/workflow/status/opus-codium/puppet-wifi/Release)](https://github.com/opus-codium/puppet-wifi/releases)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/opuscodium/wifi.svg)](https://forge.puppetlabs.com/opuscodium/wifi)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/opuscodium/wifi.svg)](https://forge.puppetlabs.com/opuscodium/wifi)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/opuscodium/wifi.svg)](https://forge.puppetlabs.com/opuscodium/wifi)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/opuscodium/wifi.svg)](https://forge.puppetlabs.com/opuscodium/wifi)
+[![License](https://img.shields.io/github/license/opus-codium/puppet-wifi.svg)](https://github.com/voxpupuli/opuscodium-wifi/blob/master/LICENSE.md)
+<!-- header -->
+
 #### Table of Contents
 
 <!-- vim-markdown-toc GFM -->
