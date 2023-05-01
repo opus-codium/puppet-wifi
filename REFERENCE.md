@@ -10,11 +10,11 @@
 
 ### Defined types
 
-* [`wifi::infrastructure`](#wifiinfrastructure): This define configure a Wi-Fi connection to a network
+* [`wifi::infrastructure`](#wifi--infrastructure): This define configure a Wi-Fi connection to a network
 
 ### Functions
 
-* [`wifi::wpa_passphrase`](#wifiwpa_passphrase): Generate the 256-bit pre-shared WPA key for a Wi-Fi network
+* [`wifi::wpa_passphrase`](#wifi--wpa_passphrase): Generate the 256-bit pre-shared WPA key for a Wi-Fi network
 
 ## Classes
 
@@ -24,7 +24,7 @@ Manage Wi-Fi configuration
 
 ## Defined types
 
-### <a name="wifiinfrastructure"></a>`wifi::infrastructure`
+### <a name="wifi--infrastructure"></a>`wifi::infrastructure`
 
 This define configure a Wi-Fi connection to a network
 
@@ -32,16 +32,16 @@ This define configure a Wi-Fi connection to a network
 
 The following parameters are available in the `wifi::infrastructure` defined type:
 
-* [`dns`](#dns)
-* [`mac`](#mac)
-* [`psk`](#psk)
-* [`ssid`](#ssid)
-* [`uuid`](#uuid)
-* [`priority`](#priority)
-* [`bssid`](#bssid)
-* [`ensure`](#ensure)
+* [`dns`](#-wifi--infrastructure--dns)
+* [`mac`](#-wifi--infrastructure--mac)
+* [`psk`](#-wifi--infrastructure--psk)
+* [`ssid`](#-wifi--infrastructure--ssid)
+* [`uuid`](#-wifi--infrastructure--uuid)
+* [`priority`](#-wifi--infrastructure--priority)
+* [`bssid`](#-wifi--infrastructure--bssid)
+* [`ensure`](#-wifi--infrastructure--ensure)
 
-##### <a name="dns"></a>`dns`
+##### <a name="-wifi--infrastructure--dns"></a>`dns`
 
 Data type: `Array[String]`
 
@@ -49,23 +49,23 @@ DNS servers to use with this connection
 
 Default value: `[]`
 
-##### <a name="mac"></a>`mac`
+##### <a name="-wifi--infrastructure--mac"></a>`mac`
 
 Data type: `Optional[String]`
 
 MAC address of the Access Point
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="psk"></a>`psk`
+##### <a name="-wifi--infrastructure--psk"></a>`psk`
 
 Data type: `Optional[String[8,64]]`
 
 Pre-Shared Key to use for authentication
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ssid"></a>`ssid`
+##### <a name="-wifi--infrastructure--ssid"></a>`ssid`
 
 Data type: `Optional[String]`
 
@@ -73,31 +73,31 @@ Service Set IDentifier (SSID) of the network
 
 Default value: `$name`
 
-##### <a name="uuid"></a>`uuid`
+##### <a name="-wifi--infrastructure--uuid"></a>`uuid`
 
 Data type: `Optional[String]`
 
 UUID of the network
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="priority"></a>`priority`
+##### <a name="-wifi--infrastructure--priority"></a>`priority`
 
 Data type: `Optional[Integer]`
 
 Priority of this AP
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="bssid"></a>`bssid`
+##### <a name="-wifi--infrastructure--bssid"></a>`bssid`
 
 Data type: `Optional[String[1]]`
 
 Network BSSID (typically the MAC address of the access point)
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ensure"></a>`ensure`
+##### <a name="-wifi--infrastructure--ensure"></a>`ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -107,7 +107,7 @@ Default value: `'present'`
 
 ## Functions
 
-### <a name="wifiwpa_passphrase"></a>`wifi::wpa_passphrase`
+### <a name="wifi--wpa_passphrase"></a>`wifi::wpa_passphrase`
 
 Type: Ruby 4.x API
 
