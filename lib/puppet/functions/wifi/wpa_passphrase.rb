@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'openssl'
 
 # @summary Generate the 256-bit pre-shared WPA key for a Wi-Fi network
