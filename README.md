@@ -1,7 +1,7 @@
 # wifi
 
 <!-- header GFM -->
-[![Build Status](https://img.shields.io/github/workflow/status/opus-codium/puppet-wifi/Release)](https://github.com/opus-codium/puppet-wifi/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/opus-codium/puppet-wifi/release.yml)](https://github.com/opus-codium/puppet-wifi/releases)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/opuscodium/wifi.svg)](https://forge.puppetlabs.com/opuscodium/wifi)
 [![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/opuscodium/wifi.svg)](https://forge.puppetlabs.com/opuscodium/wifi)
 [![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/opuscodium/wifi.svg)](https://forge.puppetlabs.com/opuscodium/wifi)
