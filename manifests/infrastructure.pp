@@ -21,7 +21,9 @@ define wifi::infrastructure (
 ) {
   include wifi
 
-  if 64 == $psk.length() {
+  if $psk == undef {
+    $hashed_psk = undef
+  } elsif 64 == $psk.length() {
     $hashed_psk = $psk
   } else {
     $hashed_psk = wifi::wpa_passphrase($ssid, $psk)
