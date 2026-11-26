@@ -36,6 +36,7 @@ The following parameters are available in the `wifi::infrastructure` defined typ
 * [`mac`](#-wifi--infrastructure--mac)
 * [`psk`](#-wifi--infrastructure--psk)
 * [`ssid`](#-wifi--infrastructure--ssid)
+* [`scan_ssid`](#-wifi--infrastructure--scan_ssid)
 * [`uuid`](#-wifi--infrastructure--uuid)
 * [`priority`](#-wifi--infrastructure--priority)
 * [`bssid`](#-wifi--infrastructure--bssid)
@@ -72,6 +73,14 @@ Data type: `Optional[String]`
 Service Set IDentifier (SSID) of the network
 
 Default value: `$name`
+
+##### <a name="-wifi--infrastructure--scan_ssid"></a>`scan_ssid`
+
+Data type: `Optional[Integer[0,1]]`
+
+SSID scan technique
+
+Default value: `undef`
 
 ##### <a name="-wifi--infrastructure--uuid"></a>`uuid`
 
