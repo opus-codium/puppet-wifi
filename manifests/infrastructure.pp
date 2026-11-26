@@ -4,6 +4,7 @@
 # @param mac MAC address of the Access Point
 # @param psk Pre-Shared Key to use for authentication
 # @param ssid Service Set IDentifier (SSID) of the network
+# @param scan_ssid SSID scan technique
 # @param uuid UUID of the network
 # @param priority Priority of this AP
 # @param bssid Network BSSID (typically the MAC address of the access point)
@@ -13,13 +14,16 @@ define wifi::infrastructure (
   Optional[String]          $mac      = undef,
   Optional[String[8,64]]    $psk      = undef,
   Optional[String]          $ssid     = $name,
+  Optional[Integer[0,1]]    $scan_ssid = undef,
   Optional[String]          $uuid     = undef,
   Optional[Integer]         $priority = undef,
   Optional[String[1]]       $bssid    = undef,
 ) {
   include wifi
 
-  if 64 == $psk.length() {
+  if $psk == undef {
+    $hashed_psk = undef
+  } elsif 64 == $psk.length() {
     $hashed_psk = $psk
   } else {
     $hashed_psk = wifi::wpa_passphrase($ssid, $psk)
@@ -58,6 +62,7 @@ define wifi::infrastructure (
           content => epp('wifi/wpa_supplicant.conf.epp',
             {
               ssid       => $ssid,
+              scan_ssid  => $scan_ssid,
               hashed_psk => $hashed_psk,
               priority   => $priority,
               bssid      => $bssid,

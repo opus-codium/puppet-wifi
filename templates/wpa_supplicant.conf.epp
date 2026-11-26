@@ -1,14 +1,17 @@
 network={
-  ssid="<%= $ssid %>"
+	ssid="<%= $ssid %>"
+<% if $scan_ssid { -%>
+	scan_ssid=<%= $scan_ssid %>
+<% } -%>
 <% if $bssid { -%>
-  bssid=<%= $bssid %>
+	bssid=<%= $bssid %>
 <% } -%>
 <% if $priority { -%>
-  priority=<%= $priority %>
+	priority=<%= $priority %>
 <% } -%>
 <% if $hashed_psk { -%>
-  psk=<%= $hashed_psk %>
+	psk=<%= $hashed_psk %>
 <% } else { -%>
-  key_mgmt=NONE
+	key_mgmt=NONE
 <% } -%>
 }
